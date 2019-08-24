@@ -3,7 +3,12 @@ name = "wowza-rest-rust"
 version = "0.0.0"
 authors = ["nikos efthias <nikos@mugsoft.io>"]
 edition = "2018"
-
+description = "rest api bindings for wowza"
+license = "MIT"
+readme = "README.md"
+keywords = ["wowza","streaming","rest","wowzaStreamingEngine","api"]
+categories = ["api-bindings"]
+repository="https://github.com/NikosEfthias/wowza-rest-rust"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
