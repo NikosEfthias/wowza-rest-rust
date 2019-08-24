@@ -1,2 +1,2 @@
-# wowzastreamingengine_rest_rust
-Rust bindings for wowza streaming engine rest api
+# wowza-rest-rust
+Rust bindings for wowza rest api
