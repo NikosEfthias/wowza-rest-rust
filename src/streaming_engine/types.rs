@@ -47,6 +47,7 @@ pub(crate) fn default_headers() -> Vec<(&'static str, &'static str)>
         ("Accept", "application/json"),
     ]
 }
+#[derive(Clone, Debug)]
 pub enum ResponseStatus
 {
     Ok,
@@ -56,4 +57,23 @@ pub enum ResponseStatus
     UnsupportedMediaType,
     Created,
     Conflict,
+}
+#[derive(Debug)]
+pub enum Error
+{
+    HttpError(isahc::http::Error),
+    IsahcError(isahc::Error),
+    JsonError(serde_json::Error),
+    Error(String),
+}
+#[derive(Clone, Debug, Default, Deserialize)]
+#[serde(rename_all = "camelCase")]
+#[serde(default)]
+pub struct ResponseData
+{
+    message: String,
+    success: bool,
+    wowza_server: String,
+    code: String,
+    data: Option<String>,
 }
