@@ -77,3 +77,22 @@ pub struct ResponseData
     code: String,
     data: Option<String>,
 }
+#[derive(Clone, Debug, Deserialize, Default)]
+pub struct CurrentMachineStatistics
+{
+    pub heapUsed: usize,
+    pub cpuSystem: usize,
+    pub connectionCount: usize,
+    pub memoryFree: usize,
+    pub cpuIdle: usize,
+    pub serverName: String,
+    pub memoryUsed: usize,
+    pub version: String,
+    pub diskFree: usize,
+    pub cpuUser: usize,
+    pub diskUsed: usize,
+    pub heapFree: usize,
+    pub serverUptime: usize,
+    #[serde(default)]
+    pub saveFieldList: Vec<String>,
+}
