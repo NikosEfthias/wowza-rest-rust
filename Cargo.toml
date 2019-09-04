@@ -1,6 +1,6 @@
 [package]
 name = "wowza-rest-rust"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["nikos efthias <nikos@mugsoft.io>"]
 edition = "2018"
 description = "rest api bindings for wowza"
