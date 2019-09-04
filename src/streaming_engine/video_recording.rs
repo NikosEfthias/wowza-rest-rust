@@ -1,8 +1,8 @@
-use super::types::*;
+use super::prelude::*;
 use isahc::http::Request;
 pub fn start_video_recording(
     api_serv_url: &str,
-    cfg: &super::StreamRecorderConfig,
+    cfg: &StreamRecorderConfig,
 ) -> Result<super::types::ResponseData, super::types::Error>
 {
     let addr = format!(
@@ -10,7 +10,7 @@ pub fn start_video_recording(
         api_serv_url, cfg.serverName, cfg.vhostName, cfg.applicationName, cfg.instanceName
     );
     let mut req = Request::post(addr);
-    super::default_headers().iter().for_each(|&(k, v)| {
+    default_headers().iter().for_each(|&(k, v)| {
         req.header(k, v);
     });
     let req = req
@@ -21,7 +21,7 @@ pub fn start_video_recording(
 }
 pub fn stop_video_recording(
     api_serv_url: &str,
-    cfg: &super::StreamRecorderConfig,
+    cfg: &StreamRecorderConfig,
 ) -> Result<super::types::ResponseData, Error>
 {
     let addr = format!(
