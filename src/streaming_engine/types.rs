@@ -78,6 +78,8 @@ pub struct ResponseData
     data: Option<String>,
 }
 #[derive(Clone, Debug, Deserialize, Default)]
+#[serde(default)]
+#[allow(bad_style)]
 pub struct CurrentMachineStatistics
 {
     pub heapUsed: usize,
@@ -93,6 +95,5 @@ pub struct CurrentMachineStatistics
     pub diskUsed: usize,
     pub heapFree: usize,
     pub serverUptime: usize,
-    #[serde(default)]
     pub saveFieldList: Vec<String>,
 }
