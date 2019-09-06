@@ -1,6 +1,6 @@
 [package]
 name = "wowza-rest-rust"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["nikos efthias <nikos@mugsoft.io>"]
 edition = "2018"
 description = "rest api bindings for wowza"
@@ -12,7 +12,7 @@ repository="https://github.com/NikosEfthias/wowza-rest-rust"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-isahc = {version="0.7",features=["json"]}
+isahc = {version="0.7",features=["json","static-curl"],default-features=false}
 serde_json = "1.0"
 [dependencies.serde]
 version = "1.0"
